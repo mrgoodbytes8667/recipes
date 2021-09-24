@@ -9,12 +9,6 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
-                },
-                "env": {
-                    "DISCORD_CLIENT_ID": "",
-                    "DISCORD_CLIENT_SECRET": "",
-                    "DISCORD_BOT_TOKEN": "",
-                    "DISCORD_PUBLIC_KEY": ""
                 }
             },
             "files": {
@@ -37,7 +31,7 @@
                     "executable": false
                 }
             },
-            "ref": "a512dcf96a9f42bcabf0e0d5dfe9ae214e1c2dab"
+            "ref": "5bff30ebf08a79c5704ecc59bd0416ea48051b69"
         }
     }
 }
