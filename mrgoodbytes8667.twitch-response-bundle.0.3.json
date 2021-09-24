@@ -1,0 +1,29 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/twitch-response-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\TwitchResponseBundle\\BytesTwitchResponseBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "TWITCH_HUB_SECRET": ""
+                }
+            },
+            "files": {
+                "config/packages/bytes_twitch_response.yaml": {
+                    "contents": [
+                        "bytes_twitch_response:",
+                        "    hub_secret: '%env(TWITCH_HUB_SECRET)%'"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "c3247cc6b511f5c8c30fff1f7e2968ea3cff893f"
+        }
+    }
+}
