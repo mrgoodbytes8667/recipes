@@ -1,0 +1,41 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/twitch-client-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\TwitchClientBundle\\BytesTwitchClientBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "TWITCH_CLIENT_ID": "",
+                    "TWITCH_CLIENT_SECRET": "",
+                    "TWITCH_HUB_SECRET": ""
+                }
+            },
+            "files": {
+                "config/routes/bytes_twitch_client_oauth.yaml": {
+                    "contents": [
+                        "bytes_twitch_client_oauth_routing:",
+                        "  resource: '@BytesTwitchClientBundle/Resources/config/routing-oauth.php'",
+                        "  prefix: /oauth/twitch"
+                    ],
+                    "executable": false
+                },
+                "config/packages/bytes_twitch_client.yaml": {
+                    "contents": [
+                        "bytes_twitch_client:",
+                        "    client_id: '%env(TWITCH_CLIENT_ID)%'",
+                        "    client_secret: '%env(TWITCH_CLIENT_SECRET)%'",
+                        "    hub_secret: '%env(TWITCH_HUB_SECRET)%'"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "20ef0f082878a1d3abc640677ed41a1861d74d60"
+        }
+    }
+}
