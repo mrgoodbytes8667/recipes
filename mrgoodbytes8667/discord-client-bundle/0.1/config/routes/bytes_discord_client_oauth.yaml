@@ -1,0 +1,3 @@
+bytes_discord_client_oauth_routing:
+    resource: '@BytesDiscordClientBundle/Resources/config/routing-oauth.php'
+    prefix: /oauth/discord
