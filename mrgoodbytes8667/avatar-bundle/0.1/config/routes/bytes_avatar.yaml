@@ -1,0 +1,3 @@
+_bytes_avatar:
+  resource: '@BytesAvatarBundle/Resources/config/routing.php'
+  prefix: /avatar
