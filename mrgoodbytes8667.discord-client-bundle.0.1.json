@@ -13,7 +13,8 @@
                 "env": {
                     "DISCORD_CLIENT_ID": "",
                     "DISCORD_CLIENT_SECRET": "",
-                    "DISCORD_BOT_TOKEN": ""
+                    "DISCORD_BOT_TOKEN": "",
+                    "DISCORD_PUBLIC_KEY": ""
                 }
             },
             "files": {
@@ -30,12 +31,13 @@
                         "bytes_discord_client:",
                         "    client_id: '%env(DISCORD_CLIENT_ID)%'",
                         "    client_secret: '%env(DISCORD_CLIENT_SECRET)%'",
-                        "    bot_token: '%env(DISCORD_BOT_TOKEN)%'"
+                        "    bot_token: '%env(DISCORD_BOT_TOKEN)%'",
+                        "    client_public_key: '%env(DISCORD_PUBLIC_KEY)%'"
                     ],
                     "executable": false
                 }
             },
-            "ref": "56ef38c2a625b054c9456a3e47cb60725aa2bf84"
+            "ref": "a512dcf96a9f42bcabf0e0d5dfe9ae214e1c2dab"
         }
     }
 }
