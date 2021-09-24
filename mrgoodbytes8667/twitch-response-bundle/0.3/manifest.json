@@ -1,0 +1,11 @@
+{
+  "bundles": {
+    "Bytes\\TwitchResponseBundle\\BytesTwitchResponseBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "env": {
+    "TWITCH_HUB_SECRET": ""
+  }
+}
