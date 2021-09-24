@@ -198,6 +198,9 @@
         "zulipnotifier": "symfony/zulip-notifier"
     },
     "recipes": {
+        "mrgoodbytes8667/avatar-bundle": [
+            "0.1"
+        ],
         "mrgoodbytes8667/user-bundle": [
             "0.1"
         ]

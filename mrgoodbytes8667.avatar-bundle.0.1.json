@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/avatar-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\AvatarBundle\\BytesAvatarBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/routes/bytes_avatar.yaml": {
+                    "contents": [
+                        "_bytes_avatar:",
+                        "  resource: '@BytesAvatarBundle/Resources/config/routing.php'",
+                        "  prefix: /avatar"
+                    ],
+                    "executable": false
+                },
+                "config/packages/bytes_avatar.yaml": {
+                    "contents": [
+                        "bytes_avatar:",
+                        "  multiavatar: ~"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "30dc59edc0836feb25bd4105d99a4f2df1f715da"
+        }
+    }
+}
