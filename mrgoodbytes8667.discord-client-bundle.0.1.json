@@ -1,0 +1,41 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/discord-client-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\DiscordClientBundle\\BytesDiscordClientBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "DISCORD_CLIENT_ID": "",
+                    "DISCORD_CLIENT_SECRET": "",
+                    "DISCORD_BOT_TOKEN": ""
+                }
+            },
+            "files": {
+                "config/routes/bytes_discord_client_oauth.yaml": {
+                    "contents": [
+                        "bytes_discord_client_oauth_routing:",
+                        "    resource: '@BytesDiscordClientBundle/Resources/config/routing-oauth.php'",
+                        "    prefix: /oauth/discord"
+                    ],
+                    "executable": false
+                },
+                "config/packages/bytes_discord_client.yaml": {
+                    "contents": [
+                        "bytes_discord_client:",
+                        "    client_id: '%env(DISCORD_CLIENT_ID)%'",
+                        "    client_secret: '%env(DISCORD_CLIENT_SECRET)%'",
+                        "    bot_token: '%env(DISCORD_BOT_TOKEN)%'"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "56ef38c2a625b054c9456a3e47cb60725aa2bf84"
+        }
+    }
+}
