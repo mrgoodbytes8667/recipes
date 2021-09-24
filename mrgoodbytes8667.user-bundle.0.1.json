@@ -1,0 +1,26 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/user-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\UserBundle\\BytesUserBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/bytes_user.yaml": {
+                    "contents": [
+                        "bytes_user:",
+                        "  user_class: \\App\\Entity\\User"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "2638625fdd5fdcc7f987dbf59fc453582c89cab8"
+        }
+    }
+}
