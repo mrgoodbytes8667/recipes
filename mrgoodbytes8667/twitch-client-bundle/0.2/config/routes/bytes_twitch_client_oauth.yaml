@@ -1,0 +1,3 @@
+bytes_twitch_client_oauth_routing:
+  resource: '@BytesTwitchClientBundle/Resources/config/routing-oauth.php'
+  prefix: /oauth/twitch

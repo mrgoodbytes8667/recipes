@@ -1,0 +1,13 @@
+{
+  "bundles": {
+    "Bytes\\TwitchClientBundle\\BytesTwitchClientBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "env": {
+    "TWITCH_CLIENT_ID": "",
+    "TWITCH_CLIENT_SECRET": "",
+    "TWITCH_HUB_SECRET": ""
+  }
+}

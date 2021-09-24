@@ -1,0 +1,4 @@
+bytes_twitch_client:
+    client_id: '%env(TWITCH_CLIENT_ID)%'
+    client_secret: '%env(TWITCH_CLIENT_SECRET)%'
+    hub_secret: '%env(TWITCH_HUB_SECRET)%'
