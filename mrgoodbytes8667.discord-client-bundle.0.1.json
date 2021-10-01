@@ -26,12 +26,22 @@
                         "    client_id: '%env(DISCORD_CLIENT_ID)%'",
                         "    client_secret: '%env(DISCORD_CLIENT_SECRET)%'",
                         "    bot_token: '%env(DISCORD_BOT_TOKEN)%'",
-                        "    client_public_key: '%env(DISCORD_PUBLIC_KEY)%'"
+                        "    client_public_key: '%env(DISCORD_PUBLIC_KEY)%'",
+                        "    endpoints:",
+                        "        bot:",
+                        "            revoke_on_refresh: false",
+                        "            fire_revoke_on_refresh: false",
+                        "        login:",
+                        "            revoke_on_refresh: false",
+                        "            fire_revoke_on_refresh: false",
+                        "        user:",
+                        "            revoke_on_refresh: false",
+                        "            fire_revoke_on_refresh: false"
                     ],
                     "executable": false
                 }
             },
-            "ref": "5bff30ebf08a79c5704ecc59bd0416ea48051b69"
+            "ref": "fcc20d13814d7ffe0f774d912e91790e258340b0"
         }
     }
 }
