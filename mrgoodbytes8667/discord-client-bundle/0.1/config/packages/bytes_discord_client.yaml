@@ -3,3 +3,13 @@ bytes_discord_client:
     client_secret: '%env(DISCORD_CLIENT_SECRET)%'
     bot_token: '%env(DISCORD_BOT_TOKEN)%'
     client_public_key: '%env(DISCORD_PUBLIC_KEY)%'
+    endpoints:
+        bot:
+            revoke_on_refresh: false
+            fire_revoke_on_refresh: false
+        login:
+            revoke_on_refresh: false
+            fire_revoke_on_refresh: false
+        user:
+            revoke_on_refresh: false
+            fire_revoke_on_refresh: false
