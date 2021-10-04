@@ -13,8 +13,7 @@
                 "env": {
                     "DISCORD_CLIENT_ID": "",
                     "DISCORD_CLIENT_SECRET": "",
-                    "DISCORD_BOT_TOKEN": "",
-                    "DISCORD_PUBLIC_KEY": ""
+                    "DISCORD_BOT_TOKEN": ""
                 }
             },
             "files": {
@@ -32,7 +31,6 @@
                         "    client_id: '%env(DISCORD_CLIENT_ID)%'",
                         "    client_secret: '%env(DISCORD_CLIENT_SECRET)%'",
                         "    bot_token: '%env(DISCORD_BOT_TOKEN)%'",
-                        "    client_public_key: '%env(DISCORD_PUBLIC_KEY)%'",
                         "    endpoints:",
                         "        bot:",
                         "            revoke_on_refresh: false",
@@ -47,7 +45,7 @@
                     "executable": false
                 }
             },
-            "ref": "32ecfa73065f49cfe8ae686ffe238ba6623c140e"
+            "ref": "151b73108169a13db2b96a0681ab45a5ab6356f3"
         }
     }
 }

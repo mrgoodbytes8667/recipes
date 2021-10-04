@@ -9,6 +9,10 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "TWITCH_CLIENT_ID": "",
+                    "TWITCH_CLIENT_SECRET": ""
                 }
             },
             "files": {
@@ -30,7 +34,7 @@
                     "executable": false
                 }
             },
-            "ref": "cb037a81d6e3e10bc740b261711247b92c71023f"
+            "ref": "3ed9e32f9292446cec2c6a8e2a5d5804ac92cd53"
         }
     }
 }

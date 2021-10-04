@@ -202,10 +202,8 @@
             "0.1"
         ],
         "mrgoodbytes8667/discord-client-bundle": [
-            "0.1"
-        ],
-        "mrgoodbytes8667/response-bundle": [
-            "3.0"
+            "0.1",
+            "0.4"
         ],
         "mrgoodbytes8667/twitch-client-bundle": [
             "0.2"

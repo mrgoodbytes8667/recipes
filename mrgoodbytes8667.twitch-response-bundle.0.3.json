@@ -9,6 +9,9 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "TWITCH_HUB_SECRET": ""
                 }
             },
             "files": {
@@ -20,7 +23,7 @@
                     "executable": false
                 }
             },
-            "ref": "b3fc28e5d28504149edc541e3e4415c680c71030"
+            "ref": "c3247cc6b511f5c8c30fff1f7e2968ea3cff893f"
         }
     }
 }
