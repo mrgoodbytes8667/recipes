@@ -1,0 +1,40 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/avatar-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\AvatarBundle\\BytesAvatarBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "MULTIAVATAR_SALT": "%generate(secret)%"
+                }
+            },
+            "files": {
+                "config/routes/bytes_avatar.yaml": {
+                    "contents": [
+                        "_bytes_avatar:",
+                        "  resource: '@BytesAvatarBundle/Resources/config/routing-gravatar-webp.php'",
+                        "  prefix: /avatar"
+                    ],
+                    "executable": false
+                },
+                "config/packages/bytes_avatar.yaml": {
+                    "contents": [
+                        "bytes_avatar:",
+                        "    multiavatar:",
+                        "        field: email",
+                        "        salt: '%env(MULTIAVATAR_SALT)%'",
+                        "        enable: false"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "1b4328a232e0ee59f69c05ae81641dbe204a80d6"
+        }
+    }
+}

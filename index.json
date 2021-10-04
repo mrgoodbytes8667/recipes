@@ -199,7 +199,8 @@
     },
     "recipes": {
         "mrgoodbytes8667/avatar-bundle": [
-            "0.1"
+            "0.1",
+            "0.4"
         ],
         "mrgoodbytes8667/discord-client-bundle": [
             "0.1",
