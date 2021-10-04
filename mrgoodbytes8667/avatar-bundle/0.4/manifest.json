@@ -1,0 +1,11 @@
+{
+  "bundles": {
+    "Bytes\\AvatarBundle\\BytesAvatarBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "env": {
+    "MULTIAVATAR_SALT": "%generate(secret)%"
+  }
+}
