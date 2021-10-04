@@ -1,0 +1,13 @@
+{
+  "bundles": {
+    "Bytes\\DiscordClientBundle\\BytesDiscordClientBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "env": {
+    "DISCORD_CLIENT_ID": "",
+    "DISCORD_CLIENT_SECRET": "",
+    "DISCORD_BOT_TOKEN": ""
+  }
+}

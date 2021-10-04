@@ -1,0 +1,14 @@
+bytes_discord_client:
+    client_id: '%env(DISCORD_CLIENT_ID)%'
+    client_secret: '%env(DISCORD_CLIENT_SECRET)%'
+    bot_token: '%env(DISCORD_BOT_TOKEN)%'
+    endpoints:
+        bot:
+            revoke_on_refresh: false
+            fire_revoke_on_refresh: false
+        login:
+            revoke_on_refresh: false
+            fire_revoke_on_refresh: false
+        user:
+            revoke_on_refresh: false
+            fire_revoke_on_refresh: false
