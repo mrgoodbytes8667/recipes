@@ -16,20 +16,20 @@
                 }
             },
             "files": {
-                "config/routes/bytes_twitch_client_oauth.yaml": {
-                    "contents": [
-                        "bytes_twitch_client_oauth_routing:",
-                        "  resource: '@BytesTwitchClientBundle/Resources/config/routing-oauth.php'",
-                        "  prefix: /oauth/twitch"
-                    ],
-                    "executable": false
-                },
                 "config/packages/bytes_twitch_client.yaml": {
                     "contents": [
                         "bytes_twitch_client:",
                         "    client_id: '%env(TWITCH_CLIENT_ID)%'",
                         "    client_secret: '%env(TWITCH_CLIENT_SECRET)%'",
                         "    hub_secret: '%env(TWITCH_HUB_SECRET)%'"
+                    ],
+                    "executable": false
+                },
+                "config/routes/bytes_twitch_client_oauth.yaml": {
+                    "contents": [
+                        "bytes_twitch_client_oauth_routing:",
+                        "  resource: '@BytesTwitchClientBundle/Resources/config/routing-oauth.php'",
+                        "  prefix: /oauth/twitch"
                     ],
                     "executable": false
                 }

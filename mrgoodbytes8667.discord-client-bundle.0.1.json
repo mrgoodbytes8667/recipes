@@ -18,14 +18,6 @@
                 }
             },
             "files": {
-                "config/routes/bytes_discord_client_oauth.yaml": {
-                    "contents": [
-                        "bytes_discord_client_oauth_routing:",
-                        "    resource: '@BytesDiscordClientBundle/Resources/config/routing-oauth.php'",
-                        "    prefix: /oauth/discord"
-                    ],
-                    "executable": false
-                },
                 "config/packages/bytes_discord_client.yaml": {
                     "contents": [
                         "bytes_discord_client:",
@@ -43,6 +35,14 @@
                         "        user:",
                         "            revoke_on_refresh: false",
                         "            fire_revoke_on_refresh: false"
+                    ],
+                    "executable": false
+                },
+                "config/routes/bytes_discord_client_oauth.yaml": {
+                    "contents": [
+                        "bytes_discord_client_oauth_routing:",
+                        "    resource: '@BytesDiscordClientBundle/Resources/config/routing-oauth.php'",
+                        "    prefix: /oauth/discord"
                     ],
                     "executable": false
                 }
