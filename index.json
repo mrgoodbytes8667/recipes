@@ -21,11 +21,11 @@
         ]
     },
     "versions": [],
-    "branch": "master",
+    "branch": "main",
     "is_contrib": false,
     "_links": {
         "repository": "github.com/mrgoodbytes8667/recipes",
-        "origin_template": "{package}:{version}@github.com/mrgoodbytes8667/recipes:master",
+        "origin_template": "{package}:{version}@github.com/mrgoodbytes8667/recipes:main",
         "recipe_template": "https://api.github.com/repos/mrgoodbytes8667/recipes/contents/{package_dotted}.{version}.json?ref=flex/main"
     }
 }
