@@ -3,7 +3,8 @@
     "recipes": {
         "mrgoodbytes8667/avatar-bundle": [
             "0.1",
-            "0.4"
+            "0.4",
+            "0.6"
         ],
         "mrgoodbytes8667/discord-client-bundle": [
             "0.1",
@@ -25,6 +26,7 @@
     "_links": {
         "repository": "github.com/mrgoodbytes8667/recipes",
         "origin_template": "{package}:{version}@github.com/mrgoodbytes8667/recipes:main",
-        "recipe_template": "https://api.github.com/repos/mrgoodbytes8667/recipes/contents/{package_dotted}.{version}.json?ref=flex/main"
+        "recipe_template": "https://raw.githubusercontent.com/mrgoodbytes8667/recipes/flex/main/{package_dotted}.{version}.json",
+        "archived_recipes_template": "https://raw.githubusercontent.com/mrgoodbytes8667/recipes/flex/main/archived/{package_dotted}/{ref}.json"
     }
 }

@@ -1,0 +1,63 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/avatar-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\AvatarBundle\\BytesAvatarBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "MULTIAVATAR_SALT": "%generate(secret)%"
+                },
+                "dockerfile": [
+                    "RUN apk add --no-cache \\",
+                    "\tfreetype \\",
+                    "\tlibpng \\",
+                    "\tlibjpeg-turbo \\",
+                    "\tfreetype-dev \\",
+                    "\tlibpng-dev \\",
+                    "\tlibjpeg-turbo-dev \\",
+                    "\t;",
+                    "RUN docker-php-ext-configure gd \\",
+                    "\t--with-freetype \\",
+                    "\t--with-jpeg \\",
+                    "\t ;",
+                    "RUN docker-php-ext-install -j$(nproc) gd  \\",
+                    "\t   ;",
+                    "RUN apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev \\",
+                    "\t;",
+                    "RUN apk add --no-cache ${PHPIZE_DEPS} imagemagick imagemagick-dev",
+                    "RUN pecl install -o -f imagick\\",
+                    "\t&&  docker-php-ext-enable imagick \\",
+                    "\t;",
+                    "RUN apk del --no-cache ${PHPIZE_DEPS}"
+                ]
+            },
+            "files": {
+                "config/packages/bytes_avatar.yaml": {
+                    "contents": [
+                        "bytes_avatar:",
+                        "    multiavatar:",
+                        "        field: email",
+                        "        salt: '%env(MULTIAVATAR_SALT)%'",
+                        "        enable: false"
+                    ],
+                    "executable": false
+                },
+                "config/routes/bytes_avatar.yaml": {
+                    "contents": [
+                        "_bytes_avatar:",
+                        "  resource: '@BytesAvatarBundle/Resources/config/routing-gravatar-webp.php'",
+                        "  prefix: /avatar"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "6753f5ad8462b46873e5691b27e990a41b2481c2"
+        }
+    }
+}
