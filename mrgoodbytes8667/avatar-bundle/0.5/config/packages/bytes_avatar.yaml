@@ -1,0 +1,5 @@
+bytes_avatar:
+    multiavatar:
+        field: email
+        salt: '%env(MULTIAVATAR_SALT)%'
+        enable: false
