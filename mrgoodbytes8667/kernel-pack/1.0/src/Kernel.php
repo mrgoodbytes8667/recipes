@@ -16,13 +16,25 @@ class Kernel extends BaseKernel
      */
     public function getCacheDir(): string
     {
-        if(isset($_ENV['USE_SHARED_CACHE_DIR']) && isset($_ENV['SHARED_CACHE_DIR'])) {
+        if (static::getSharedEnvBool('USE_SHARED_CACHE_DIR') && isset($_ENV['SHARED_CACHE_DIR'])) {
             return $_ENV['SHARED_CACHE_DIR'] . '/cache/' . $this->environment;
-        } elseif ($this->isVagrant() || isset($_ENV['USE_SHARED_CACHE_DIR'])) {
-            return $this->getNonSharedVarDir().'/cache/' . $this->environment;
+        } elseif ($this->isVagrant() || static::getSharedEnvBool('USE_SHARED_CACHE_DIR')) {
+            return $this->getNonSharedVarDir() . '/cache/' . $this->environment;
         } else {
             return parent::getCacheDir();
         }
+    }
+
+    /**
+     * @param string $tag
+     * @return false
+     */
+    private static function getSharedEnvBool(string $tag): bool
+    {
+        if (!isset($_ENV[$tag])) {
+            return false;
+        }
+        return filter_var($_ENV[$tag], FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
     }
 
     /**
@@ -36,9 +48,9 @@ class Kernel extends BaseKernel
     /**
      * @return string
      */
-    protected function getProjectName()
+    protected function getNonSharedVarDir()
     {
-        return basename($this->getProjectDir());
+        return $this->getParentDir() . '/var/' . $this->getProjectName();
     }
 
     /**
@@ -52,9 +64,9 @@ class Kernel extends BaseKernel
     /**
      * @return string
      */
-    protected function getNonSharedVarDir()
+    protected function getProjectName()
     {
-        return $this->getParentDir() . '/var/'.$this->getProjectName();
+        return basename($this->getProjectDir());
     }
 
     /**
@@ -64,10 +76,10 @@ class Kernel extends BaseKernel
      */
     public function getLogDir(): string
     {
-        if(isset($_ENV['USE_SHARED_LOG_DIR']) && isset($_ENV['SHARED_LOG_DIR'])) {
+        if (static::getSharedEnvBool('USE_SHARED_LOG_DIR') && isset($_ENV['SHARED_LOG_DIR'])) {
             return $_ENV['SHARED_LOG_DIR'] . '/log/' . $this->environment;
-        } elseif ($this->isVagrant() || isset($_ENV['USE_SHARED_LOG_DIR'])) {
-            return $this->getNonSharedVarDir().'/log';
+        } elseif ($this->isVagrant() || static::getSharedEnvBool('USE_SHARED_LOG_DIR')) {
+            return $this->getNonSharedVarDir() . '/log';
         } else {
             return parent::getLogDir();
         }
