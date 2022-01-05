@@ -1,0 +1,6 @@
+{
+  "copy-from-recipe": {
+    "public/": "%PUBLIC_DIR%/",
+    "src/": "%SRC_DIR%/"
+  }
+}
