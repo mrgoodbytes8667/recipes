@@ -1,0 +1,54 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/cache-kernel-pack": {
+            "manifest": {
+                "copy-from-recipe": {
+                    "public/": "%PUBLIC_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                }
+            },
+            "files": {
+                "public/index.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "use App\\CacheKernel;",
+                        "use App\\Kernel;",
+                        "",
+                        "require_once dirname(__DIR__).'/vendor/autoload_runtime.php';",
+                        "",
+                        "/**",
+                        " * @param array $context",
+                        " * @return CacheKernel|Kernel",
+                        " */",
+                        "return function (array $context) {",
+                        "    $kernel = new Kernel($context['APP_ENV'], (bool)$context['APP_DEBUG']);",
+                        "    if ($kernel->getEnvironment() === 'prod') {",
+                        "        $kernel = new CacheKernel($kernel);",
+                        "    }",
+                        "    return $kernel;",
+                        "};",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/CacheKernel.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "namespace App;",
+                        "",
+                        "use Symfony\\Bundle\\FrameworkBundle\\HttpCache\\HttpCache;",
+                        "",
+                        "class CacheKernel extends HttpCache",
+                        "{",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "0163ed53e527f9e56689ffa63415be4174748fc7"
+        }
+    }
+}
