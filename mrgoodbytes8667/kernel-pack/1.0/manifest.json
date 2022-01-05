@@ -1,0 +1,11 @@
+{
+  "copy-from-recipe": {
+    "src/": "%SRC_DIR%/"
+  },
+  "env": {
+    "USE_SHARED_CACHE_DIR": "false",
+    "SHARED_CACHE_DIR": "",
+    "USE_SHARED_LOG_DIR": "false",
+    "SHARED_LOG_DIR": ""
+  }
+}
