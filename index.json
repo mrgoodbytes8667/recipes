@@ -9,6 +9,9 @@
         "mrgoodbytes8667/cache-kernel-pack": [
             "1.0"
         ],
+        "mrgoodbytes8667/controller-pagination-bundle": [
+            "0.1"
+        ],
         "mrgoodbytes8667/discord-client-bundle": [
             "0.1",
             "0.4"
@@ -26,6 +29,7 @@
             "0.1"
         ]
     },
+    "recipe-conflicts": [],
     "versions": [],
     "branch": "main",
     "is_contrib": false,
@@ -33,6 +37,8 @@
         "repository": "github.com/mrgoodbytes8667/recipes",
         "origin_template": "{package}:{version}@github.com/mrgoodbytes8667/recipes:main",
         "recipe_template": "https://raw.githubusercontent.com/mrgoodbytes8667/recipes/flex/main/{package_dotted}.{version}.json",
-        "archived_recipes_template": "https://raw.githubusercontent.com/mrgoodbytes8667/recipes/flex/main/archived/{package_dotted}/{ref}.json"
+        "recipe_template_relative": "{package_dotted}.{version}.json",
+        "archived_recipes_template": "https://raw.githubusercontent.com/mrgoodbytes8667/recipes/flex/main/archived/{package_dotted}/{ref}.json",
+        "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
     }
 }
