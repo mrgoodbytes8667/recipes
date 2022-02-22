@@ -1,0 +1,29 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/controller-pagination-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\ControllerPaginationBundle\\BytesControllerPaginationBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/bytes_controller_pagination.yaml": {
+                    "contents": [
+                        "bytes_controller_pagination:",
+                        "    offsets:",
+                        "        start: 1",
+                        "        end: 1",
+                        "        current: 1"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "18d203f89679ac46ad5403059740ad17d669f9fe"
+        }
+    }
+}
