@@ -1,0 +1,8 @@
+{
+  "bundles": {
+    "Bytes\\ControllerPaginationBundle\\BytesControllerPaginationBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  }
+}
