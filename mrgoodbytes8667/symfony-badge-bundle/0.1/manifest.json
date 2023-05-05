@@ -1,0 +1,11 @@
+{
+  "bundles": {
+    "Bytes\\SymfonyBadge\\BytesSymfonyBadgeBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "env": {
+    "SYMFONY_BADGE_CACHE_PATH": "%kernel.project_dir%/var/cache/%kernel.environment%/bytes_symfony_badge"
+  }
+}
