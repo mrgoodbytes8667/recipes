@@ -20,6 +20,9 @@
         "mrgoodbytes8667/kernel-pack": [
             "1.0"
         ],
+        "mrgoodbytes8667/symfony-badge-bundle": [
+            "0.1"
+        ],
         "mrgoodbytes8667/twitch-client-bundle": [
             "0.2"
         ],
