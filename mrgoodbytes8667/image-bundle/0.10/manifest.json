@@ -1,0 +1,31 @@
+{
+  "bundles": {
+    "Bytes\\ImageBundle\\BytesImageBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "dockerfile": [
+    "RUN apk add --no-cache \\",
+    "\tfreetype \\",
+    "\tlibpng \\",
+    "\tlibjpeg-turbo \\",
+    "\tfreetype-dev \\",
+    "\tlibpng-dev \\",
+    "\tlibjpeg-turbo-dev \\",
+    "\t;",
+    "RUN docker-php-ext-configure gd \\",
+    "\t--with-freetype \\",
+    "\t--with-jpeg \\",
+    "\t ;",
+    "RUN docker-php-ext-install -j$(nproc) gd  \\",
+    "\t   ;",
+    "RUN apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev \\",
+    "\t;",
+    "RUN apk add --no-cache ${PHPIZE_DEPS} imagemagick imagemagick-dev",
+    "RUN pecl install -o -f imagick\\",
+    "\t&&  docker-php-ext-enable imagick \\",
+    "\t;",
+    "RUN apk del --no-cache ${PHPIZE_DEPS}"
+  ]
+}

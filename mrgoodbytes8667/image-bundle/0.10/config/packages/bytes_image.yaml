@@ -1,0 +1,8 @@
+when@test:
+    bytes_image:
+        cache:
+            local:
+                success:
+                    enable: false
+                fallback:
+                    enable: false
