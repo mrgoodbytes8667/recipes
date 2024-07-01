@@ -1,0 +1,103 @@
+monolog:
+    channels:
+        - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
+        - command     # Used with commands
+    handlers:
+        deprecation:
+            type: rotating_file
+            max_files: 5
+            channels: [ deprecation ]
+            path: "%kernel.logs_dir%/deprecations.%kernel.environment%.log"
+
+when@dev:
+    monolog:
+        handlers:
+            security:
+                type: rotating_file
+                max_files: 5
+                path: "%kernel.logs_dir%/security.%kernel.environment%.log"
+                level: info
+                channels: [security]
+            main:
+                type: rotating_file
+                max_files: 5
+                path: "%kernel.logs_dir%/%kernel.environment%.log"
+                level: debug
+                channels: ["!event", "!doctrine", "!deprecation", "!security"]
+            doctrine:
+                type: rotating_file
+                max_files: 2
+                path: "%kernel.logs_dir%/doctrine.%kernel.environment%.log"
+                level: debug
+                channels: ["doctrine"]
+            # uncomment to get logging in your browser
+            # you may have to allow bigger header sizes in your Web server configuration
+            #firephp:
+            #    type: firephp
+            #    level: info
+            #chromephp:
+            #    type: chromephp
+            #    level: info
+            console:
+                type: console
+                process_psr_3_messages: false
+                channels: ["!event", "!doctrine", "!console"]
+
+when@test:
+    monolog:
+        handlers:
+            main:
+                type: fingers_crossed
+                action_level: error
+                handler: nested
+                excluded_http_codes: [404, 405]
+                channels: ["!event"]
+            nested:
+                type: stream
+                path: "%kernel.logs_dir%/%kernel.environment%.log"
+                level: debug
+
+when@prod:
+    monolog:
+        handlers:
+            security:
+                type: rotating_file
+                max_files: 5
+                path: "%kernel.logs_dir%/security.%kernel.environment%.log"
+                level: info
+                channels: [security]
+            command:
+                type: rotating_file
+                max_files: 5
+                path: "%kernel.logs_dir%/command.%kernel.environment%.log"
+                level: info
+                channels: [command]
+            http_client:
+                type: rotating_file
+                max_files: 5
+                path: "%kernel.logs_dir%/http_client.%kernel.environment%.log"
+                level: info
+                channels: [http_client]
+            error:
+                type: fingers_crossed
+                action_level: error
+                handler: nested
+                excluded_http_codes: [405]
+                buffer_size: 50 # How many messages should be saved? Prevent memory leaks
+                channels: [ http_client ]
+            main:
+                type: fingers_crossed
+                action_level: info #error
+                handler: nested
+                excluded_http_codes: [404, 405]
+                buffer_size: 50 # How many messages should be saved? Prevent memory leaks
+                channels: ["!security", "!deprecation", "!http_client", "!command"]
+            nested:
+                type: rotating_file
+                max_files: 5
+                path: "%kernel.logs_dir%/%kernel.environment%.log"
+                level: debug
+            console:
+                type: console
+                process_psr_3_messages: false
+                channels: ["!event", "!doctrine"]

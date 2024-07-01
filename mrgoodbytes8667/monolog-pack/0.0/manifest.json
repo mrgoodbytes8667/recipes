@@ -1,0 +1,8 @@
+{
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/"
+  },
+  "copy-from-package": {
+    "bin/.monolog_bash_aliases": "%BIN_DIR%/.monolog_bash_aliases"
+  }
+}
