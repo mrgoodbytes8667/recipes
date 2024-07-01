@@ -10,7 +10,7 @@
                 }
             },
             "files": {
-                "config/monolog.yaml": {
+                "config/packages/monolog.yaml": {
                     "contents": [
                         "monolog:",
                         "    channels:",
@@ -120,7 +120,7 @@
                     "executable": false
                 }
             },
-            "ref": "8483838741d63ebf5e21230e769937fe0177889e"
+            "ref": "25cbc00ea3b3a98a335a8814211fbdf0902c034d"
         }
     }
 }
