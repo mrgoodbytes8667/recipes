@@ -1,0 +1,6 @@
+{
+  "copy-from-recipe": {
+    ".php-cs-fixer.dist.php": ".php-cs-fixer.dist.php",
+    "rector.php": "rector.php"
+  }
+}
