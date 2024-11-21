@@ -1,0 +1,35 @@
+{
+    "manifests": {
+        "mrgoodbytes8667/symfony-badge-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Bytes\\SymfonyBadge\\BytesSymfonyBadgeBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "SYMFONY_BADGE_CACHE_PATH": "%kernel.project_dir%/var/cache/%kernel.environment%/bytes_symfony_badge"
+                }
+            },
+            "files": {
+                "config/packages/bytes_symfony_badge.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "use Symfony\\Config\\BytesSymfonyBadgeConfig;",
+                        "",
+                        "return static function (BytesSymfonyBadgeConfig $config) {",
+                        "    $config->cachePath('%kernel.project_dir%/var/cache/%kernel.environment%/bytes_symfony_badge');",
+                        "};",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "098a2763ee1e0859f600b50774c33b8441d9dcd0"
+        }
+    }
+}
